@@ -69,13 +69,13 @@ if st.button("Predict Rating"):
         # Preprocess and vectorize
         cleaned_review = clean_data(review)
         review_vec = vectorizer.transform([cleaned_review])
-        
+
         # Predict
         try:
             pred_naive = model_naive.predict(review_vec)[0]
             pred_svc = model_SVC.predict(review_vec)[0]
             pred_nn = model_NN.predict(review_vec)[0]
-            
+
             # Display results
             st.markdown("### Predictions")
             st.markdown(
